@@ -22,8 +22,8 @@ RUN set -ex \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
 
-WORKDIR $APP
-
 RUN gem update && gem install bundler
+
+WORKDIR /workdir
 
 ENTRYPOINT [ "ruby" ]
